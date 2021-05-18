@@ -5,8 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CashRegister"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Cash Register" Height="660" Width="1000">
+    <Border Padding="10">
 
-    </Grid>
+
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Top" Background="Aquamarine" Orientation="Horizontal">
+                <Button Width="40" Height="40"/>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Left" Background="red" Orientation="Vertical">
+                <Button DockPanel.Dock="Top" Width="120" Height="40" Margin="5" Background="White"></Button>
+                <Button DockPanel.Dock="Top" Width="120" Height="40" Margin="5" Background="White"></Button>
+                <Button DockPanel.Dock="Top" Width="120" Height="40" Margin="5" Background="White"></Button>
+                <Button DockPanel.Dock="Bottom" Width="120" Height="40" Margin="5" Background="White"></Button>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Right" Background="blue"></StackPanel>
+        </DockPanel>
+        
+        
+        <!--<Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1.5*"/>
+            </Grid.ColumnDefinitions>
+
+        </Grid>-->
+        
+    </Border>
 </Window>
