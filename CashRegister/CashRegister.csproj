@@ -6,8 +6,4 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Page Include="F:\VisualStudioProjects\CashRegister\backup with table\MainWindow_BACKUP.xaml" Link="MainWindow_BACKUP.xaml" />
-  </ItemGroup>
-
 </Project>

@@ -8,10 +8,10 @@
         Title="Cash Register" Height="600" Width="1000">
     <Border Padding="10">
 
-         
+
 
         <DockPanel>
-            
+
             <!-- Creating grid and define width -->
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -19,24 +19,24 @@
                     <ColumnDefinition Width="1.6*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                
-                
+
+
                 <!--Creating left panel with buttons-->
-            <StackPanel 
+                <StackPanel 
                 Grid.Column="0" 
                 VerticalAlignment="Bottom" 
                 DockPanel.Dock="Left" 
                 Background="red" 
                 Orientation="Vertical"
                 HorizontalAlignment="Right">
-                
-                
-                    <Button x:Name="btSelect" Width="120" Height="40" Margin="5" TextBlock.FontWeight="Bold"> SELECT </Button>
-                    <Button x:Name="btDelete" Width="120" Height="40" Margin="5" TextBlock.FontWeight="Bold"> DELETE </Button>
+
+
+                    <Button x:Name="btSelect" Width="120" Height="40" Margin="5" TextBlock.FontWeight="Bold">SELECT</Button>
+                    <Button x:Name="btDelete" Width="120" Height="40" Margin="5" TextBlock.FontWeight="Bold">DELETE</Button>
                     <Button x:Name="btUp" Width="120" Height="40" Margin="5" >UP</Button>
                     <Button x:Name="btDown" Width="120" Height="40" Margin="5" >DOWN</Button>
-                    <Button x:Name="btLoad" Width="120" Height="40" Margin="5 150 5 5" TextBlock.FontWeight="Bold" > LOAD </Button>
-                    <Button x:Name="btSave" Width="120" Height="40" Margin="5" TextBlock.FontWeight="Bold" > SAVE </Button>
+                    <Button x:Name="btLoad" Width="120" Height="40" Margin="5 150 5 5" TextBlock.FontWeight="Bold" >LOAD</Button>
+                    <Button x:Name="btSave" Width="120" Height="40" Margin="5" TextBlock.FontWeight="Bold" >SAVE</Button>
 
                 </StackPanel>
 
@@ -63,13 +63,13 @@
                                 </Table.Columns>
 
                                 <TableRowGroup>
-                                    
+
                                     <!-- Title row for the table-->
                                     <TableRow Background="LightBlue">
                                         <TableCell ColumnSpan="3" TextAlignment="Center">
-                                        
+
                                             <Paragraph FontSize="24" FontWeight="Bold" FontFamily="Arial">
-                                                 SHOPCART
+                                                SHOPCART
                                             </Paragraph>
                                         </TableCell>
                                     </TableRow>
@@ -86,7 +86,7 @@
                                             <Paragraph FontSize="12pt" FontWeight="Bold" FontFamily="Arial" TextAlignment="Center">Price</Paragraph>
                                         </TableCell>
                                     </TableRow>
-                                    
+
                                     <!-- Empy Raws for products and prices-->
                                     <TableRow>
                                         <TableCell></TableCell>
@@ -99,8 +99,8 @@
                                         <TableCell></TableCell>
                                         <TableCell></TableCell>
                                     </TableRow>
-                                    
-                                    
+
+
                                     <!-- Last raw for summing-up -->
                                     <TableRow Background="LightGreen">
                                         <TableCell></TableCell>
@@ -112,27 +112,27 @@
 
 
                                 </TableRowGroup>
-                                
+
                             </Table>
-                            
+
                         </FlowDocument>
                     </FlowDocumentReader>
-                    
-                    
-                    
+
+
+
                 </StackPanel>
-                
+
 
                 <StackPanel Grid.Column="2" VerticalAlignment="Bottom">
-                    
+
                     <Grid DockPanel.Dock="Right" Background="Green">
-                        
+
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        
+
                         <StackPanel Grid.Column="0">
                             <Button x:Name="btAdd" Width="160" Height="60" Margin="5" TextBlock.FontSize="15" TextBlock.FontWeight="Bold" >ADD</Button>
                             <Button x:Name="btCheckPrice" Width="160" Height="40" Margin="5 20 5 100" TextBlock.FontSize="15" >CHECK PRICE</Button>
@@ -142,10 +142,10 @@
                             <Button x:Name="btAmount" Width="160" Height="60" Margin="5" TextBlock.FontSize="15" >AMOUNT</Button>
                             <Button x:Name="btRepeatProduct" Width="160" Height="40" Margin="5 20 5 100" TextBlock.FontSize="15" >REPEAT PRODUCT</Button>
                         </StackPanel>
-                        
+
                     </Grid>
-                    
-                    
+
+
                     <Grid>
 
                         <Grid.ColumnDefinitions>
@@ -161,7 +161,7 @@
                             <RowDefinition Height="40"/>
                             <RowDefinition Height="40"/>
                         </Grid.RowDefinitions>
-                        
+
                         <!-- Number Buttons -->
                         <Button x:Name="bt7" Grid.Column="0" Grid.Row="0" TextBlock.FontSize="20" >7</Button>
                         <Button x:Name="bt8" Grid.Column="1" Grid.Row="0" TextBlock.FontSize="20" >8</Button>
@@ -173,7 +173,7 @@
                         <Button x:Name="bt2" Grid.Column="1" Grid.Row="2" TextBlock.FontSize="20" >2</Button>
                         <Button x:Name="bt3" Grid.Column="2" Grid.Row="2" TextBlock.FontSize="20" >3</Button>
                         <Button x:Name="bt0" Grid.Column="0" Grid.Row="4" TextBlock.FontSize="20" >0</Button>
-                        
+
                         <!-- Extra buttons -->
                         <Button x:Name="btPlus10" Grid.Column="4" Grid.Row="0" TextBlock.FontSize="20" >+10</Button>
                         <Button x:Name="btMinus10" Grid.Column="4" Grid.Row="1" TextBlock.FontSize="20" >-10</Button>
@@ -181,16 +181,16 @@
                         <Button x:Name="btEnt" Grid.Column="4" Grid.Row="3" TextBlock.FontSize="20" >ENT</Button>
                         <Button x:Name="btMinus" Grid.Column="2" Grid.Row="3" TextBlock.FontSize="20" >-</Button>
                         <Button x:Name="btComma" Grid.Column="1" Grid.Row="3" TextBlock.FontSize="20" >,</Button>
-                        
+
                     </Grid>
                 </StackPanel>
-                
+
 
             </Grid>
 
         </DockPanel>
-        
-        
-        
+
+
+
     </Border>
 </Window>
