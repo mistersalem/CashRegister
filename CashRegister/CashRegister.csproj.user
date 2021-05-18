@@ -7,7 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="MainWindow.xaml">
+    <Page Update="F:\VisualStudioProjects\CashRegister\backup with table\MainWindow_BACKUP.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

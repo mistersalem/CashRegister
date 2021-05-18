@@ -8,7 +8,7 @@
         Title="Cash Register" Height="600" Width="1000">
     <Border Padding="10">
 
-         
+        
 
         <DockPanel>
             
@@ -89,16 +89,41 @@
                                     
                                     <!-- Empy Raws for products and prices-->
                                     <TableRow>
-                                        <TableCell></TableCell>
-                                        <TableCell></TableCell>
-                                        <TableCell></TableCell>
+                                        <TableCell>
+                                            <Paragraph>
+                                                <TextBlock></TextBlock>
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Paragraph>
+                                                <TextBlock></TextBlock>
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Paragraph>
+                                                <TextBlock></TextBlock>
+                                            </Paragraph>
+                                        </TableCell>                                        
                                     </TableRow>
+                                    
                                     <TableRow>
                                         <TableCell>
+                                            <Paragraph>
+                                                <TextBlock></TextBlock>
+                                            </Paragraph>
                                         </TableCell>
-                                        <TableCell></TableCell>
-                                        <TableCell></TableCell>
-                                    </TableRow>
+                                        <TableCell>
+                                            <Paragraph>
+                                                <TextBlock></TextBlock>
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Paragraph>
+                                                <TextBlock></TextBlock>
+                                            </Paragraph>
+                                        </TableCell>                                        
+                                    </TableRow>                                    
+
                                     
                                     
                                     <!-- Last raw for summing-up -->
