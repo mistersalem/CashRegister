@@ -26,106 +26,73 @@
                 Grid.Column="0" 
                 VerticalAlignment="Bottom" 
                 DockPanel.Dock="Left" 
-                Background="red" 
                 Orientation="Vertical"
                 HorizontalAlignment="Right">
 
 
                     <Button x:Name="btSelect" Width="120" Height="40" Margin="5" TextBlock.FontWeight="Bold">SELECT</Button>
                     <Button x:Name="btDelete" Width="120" Height="40" Margin="5" TextBlock.FontWeight="Bold">DELETE</Button>
-                    <Button x:Name="btUp" Width="120" Height="40" Margin="5" >UP</Button>
-                    <Button x:Name="btDown" Width="120" Height="40" Margin="5" >DOWN</Button>
-                    <Button x:Name="btLoad" Width="120" Height="40" Margin="5 150 5 5" TextBlock.FontWeight="Bold" >LOAD</Button>
+                    <Button x:Name="btLoad" Width="120" Height="40" Margin="5 200 5 5" TextBlock.FontWeight="Bold" >LOAD</Button>
                     <Button x:Name="btSave" Width="120" Height="40" Margin="5" TextBlock.FontWeight="Bold" >SAVE</Button>
 
                 </StackPanel>
 
-                <!-- Creating middle column with textbox -->
+                <!-- Creating middle column with grid -->
+                <Border Grid.Column="1" BorderThickness="2" BorderBrush="Gray" Margin="5 0" VerticalAlignment="Bottom">
+                    <StackPanel Margin="10" Grid.Column="1" Orientation="Vertical" >
 
-                <StackPanel Grid.Column="1">
+                        
+                        <Grid DockPanel.Dock="Top" Margin="0 10 0 20">
 
-                    <FlowDocumentReader>
-                        <FlowDocument>
-                            <FlowDocument.Resources>
-                                <Style TargetType="TableCell">
-                                    <Setter Property="BorderBrush" Value="Black"/>
-                                    <Setter Property="BorderThickness" Value="1"/>
-                                    <Setter Property="Padding" Value="5"/>
-                                </Style>
-                            </FlowDocument.Resources>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
 
-                            <Table CellSpacing="0">
+                            <TextBlock FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" Text="PRODUCT"/>
+                            <TextBlock Grid.Column="1" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" Text="AMOUNT"/>
+                            <TextBlock Grid.Column="2" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" Text="PRICE"/>
 
-                                <Table.Columns>
-                                    <TableColumn Width="4*" />
-                                    <TableColumn Width="*" />
-                                    <TableColumn Width="*" />
-                                </Table.Columns>
+                        </Grid>
+                        
+                        <Grid>
 
-                                <TableRowGroup>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
 
-                                    <!-- Title row for the table-->
-                                    <TableRow Background="LightBlue">
-                                        <TableCell ColumnSpan="3" TextAlignment="Center">
+                            <TextBox x:Name="productTextBox" Grid.Column="0" IsReadOnly="True" HorizontalAlignment="Stretch" Height="430" Padding="5" ></TextBox>
+                            <TextBox x:Name="amountTextBox" Grid.Column="1" IsReadOnly="True" HorizontalAlignment="Stretch" Height="430" Padding="5" TextAlignment="Right"></TextBox>
+                            <TextBox x:Name="priceTextBox" Grid.Column="2" IsReadOnly="True" HorizontalAlignment="Stretch" Height="430" Padding="5" ></TextBox>
 
-                                            <Paragraph FontSize="24" FontWeight="Bold" FontFamily="Arial">
-                                                SHOPCART
-                                            </Paragraph>
-                                        </TableCell>
-                                    </TableRow>
+                        </Grid>
+                        <Grid>
 
-                                    <!-- Header title of the table-->
-                                    <TableRow Background="LightGoldenrodYellow">
-                                        <TableCell BorderThickness="1" BorderBrush="Black">
-                                            <Paragraph FontSize="12pt" FontWeight="Bold" FontFamily="Arial" TextAlignment="Center">Product Name</Paragraph>
-                                        </TableCell>
-                                        <TableCell>
-                                            <Paragraph FontSize="12pt" FontWeight="Bold" FontFamily="Arial" TextAlignment="Center">Amount</Paragraph>
-                                        </TableCell>
-                                        <TableCell>
-                                            <Paragraph FontSize="12pt" FontWeight="Bold" FontFamily="Arial" TextAlignment="Center">Price</Paragraph>
-                                        </TableCell>
-                                    </TableRow>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
 
-                                    <!-- Empy Raws for products and prices-->
-                                    <TableRow>
-                                        <TableCell></TableCell>
-                                        <TableCell></TableCell>
-                                        <TableCell></TableCell>
-                                    </TableRow>
-                                    <TableRow>
-                                        <TableCell>
-                                        </TableCell>
-                                        <TableCell></TableCell>
-                                        <TableCell></TableCell>
-                                    </TableRow>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBox Grid.Column="0" IsReadOnly="True" HorizontalAlignment="Stretch" Padding="5" TextAlignment="Center">SUM PRICE</TextBox>
+                            <TextBox x:Name="sumPriceTextBox" Grid.Column="1" IsReadOnly="True" HorizontalAlignment="Stretch" Padding="5" TextAlignment="Left"></TextBox>
 
 
-                                    <!-- Last raw for summing-up -->
-                                    <TableRow Background="LightGreen">
-                                        <TableCell></TableCell>
-                                        <TableCell>
-                                            <Paragraph FontSize="12pt" FontWeight="Bold" FontFamily="Arial" TextAlignment="Center">SUM</Paragraph>
-                                        </TableCell>
-                                        <TableCell></TableCell>
-                                    </TableRow>
-
-
-                                </TableRowGroup>
-
-                            </Table>
-
-                        </FlowDocument>
-                    </FlowDocumentReader>
+                        </Grid>
 
 
 
-                </StackPanel>
 
+
+                    </StackPanel>
+                </Border>
 
                 <StackPanel Grid.Column="2" VerticalAlignment="Bottom">
 
-                    <Grid DockPanel.Dock="Right" Background="Green">
+                    <Grid DockPanel.Dock="Right">
 
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -156,10 +123,10 @@
                         </Grid.ColumnDefinitions>
 
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="40"/>
-                            <RowDefinition Height="40"/>
-                            <RowDefinition Height="40"/>
-                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
                         </Grid.RowDefinitions>
 
                         <!-- Number Buttons -->

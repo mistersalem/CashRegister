@@ -17,3 +17,5 @@ F:\VisualStudioProjects\CashRegister\CashRegister\obj\Debug\netcoreapp3.1\CashRe
 F:\VisualStudioProjects\CashRegister\CashRegister\obj\Debug\netcoreapp3.1\CashRegister.dll
 F:\VisualStudioProjects\CashRegister\CashRegister\obj\Debug\netcoreapp3.1\CashRegister.pdb
 F:\VisualStudioProjects\CashRegister\CashRegister\obj\Debug\netcoreapp3.1\CashRegister.genruntimeconfig.cache
+F:\VisualStudioProjects\CashRegister\CashRegister\obj\Debug\netcoreapp3.1\AddingWindow.g.cs
+F:\VisualStudioProjects\CashRegister\CashRegister\obj\Debug\netcoreapp3.1\AddingWindow.baml

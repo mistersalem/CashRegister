@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 F:\VisualStudioProjects\CashRegister\CashRegister\App.xaml
-11407045341
+2-1667744924
 
-5904527601
+6-157358762
 192-1533232326
-MainWindow.xaml;
+AddingWindow.xaml;MainWindow.xaml;
 
-False
+True
 
