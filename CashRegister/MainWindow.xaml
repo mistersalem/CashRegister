@@ -12,7 +12,7 @@
 
         <DockPanel>
 
-            <!-- Creating grid and define width -->
+            <!-- Main grid and define width -->
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.4*"/>
@@ -21,23 +21,23 @@
                 </Grid.ColumnDefinitions>
 
 
-                <!--Creating left panel with buttons-->
+                <!--Left panel with buttons-->
                 <StackPanel 
                 Grid.Column="0" 
                 VerticalAlignment="Bottom" 
                 DockPanel.Dock="Left" 
                 Orientation="Vertical"
-                HorizontalAlignment="Right">
+                HorizontalAlignment="Stretch">
 
 
-                    <Button x:Name="btSelect" Width="120" Height="40" Margin="5" TextBlock.FontWeight="Bold">SELECT</Button>
-                    <Button x:Name="btDelete" Width="120" Height="40" Margin="5" TextBlock.FontWeight="Bold">DELETE</Button>
-                    <Button x:Name="btLoad" Width="120" Height="40" Margin="5 200 5 5" TextBlock.FontWeight="Bold" >LOAD</Button>
-                    <Button x:Name="btSave" Width="120" Height="40" Margin="5" TextBlock.FontWeight="Bold" >SAVE</Button>
+                    <Button x:Name="btSelect" HorizontalAlignment="Stretch" Height="40" Margin="5" TextBlock.FontWeight="Bold">SELECT</Button>
+                    <Button x:Name="btDelete" HorizontalAlignment="Stretch" Height="40" Margin="5" TextBlock.FontWeight="Bold">DELETE</Button>
+                    <Button x:Name="btLoad" HorizontalAlignment="Stretch" Height="40" Margin="5 200 5 5" TextBlock.FontWeight="Bold" >LOAD</Button>
+                    <Button x:Name="btSave" HorizontalAlignment="Stretch" Height="40" Margin="5" TextBlock.FontWeight="Bold" >SAVE</Button>
 
                 </StackPanel>
 
-                <!-- Creating middle column with grid -->
+                <!-- Middle column with grid -->
                 <Border Grid.Column="1" BorderThickness="2" BorderBrush="Gray" Margin="5 0" VerticalAlignment="Bottom">
                     <StackPanel Margin="10" Grid.Column="1" Orientation="Vertical" >
 
@@ -77,8 +77,8 @@
 
                             </Grid.ColumnDefinitions>
 
-                            <TextBox Grid.Column="0" IsReadOnly="True" HorizontalAlignment="Stretch" Padding="5" TextAlignment="Center">SUM PRICE</TextBox>
-                            <TextBox x:Name="sumPriceTextBox" Grid.Column="1" IsReadOnly="True" HorizontalAlignment="Stretch" Padding="5" TextAlignment="Left"></TextBox>
+                            <TextBox Grid.Column="0" IsReadOnly="True" HorizontalAlignment="Stretch" Padding="5" TextAlignment="Center" Background="LightYellow">SUM PRICE</TextBox>
+                            <TextBox x:Name="sumPriceTextBox" Grid.Column="1" IsReadOnly="True" HorizontalAlignment="Stretch" Padding="5" TextAlignment="Left" Background="LightGreen"></TextBox>
 
 
                         </Grid>
@@ -90,27 +90,85 @@
                     </StackPanel>
                 </Border>
 
+                <!-- Right column -->
                 <StackPanel Grid.Column="2" VerticalAlignment="Bottom">
 
-                    <Grid DockPanel.Dock="Right">
+                    <!--<Grid DockPanel.Dock="Right">
 
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-
+                        
+                        --><!-- Right buttons--><!--
                         <StackPanel Grid.Column="0">
-                            <Button x:Name="btAdd" Width="160" Height="60" Margin="5" TextBlock.FontSize="15" TextBlock.FontWeight="Bold" >ADD</Button>
-                            <Button x:Name="btCheckPrice" Width="160" Height="40" Margin="5 20 5 100" TextBlock.FontSize="15" >CHECK PRICE</Button>
+                            <Button x:Name="btAdd" HorizontalAlignment="Stretch" Height="60" Margin="5" TextBlock.FontSize="15" TextBlock.FontWeight="Bold" >ADD</Button>
+                            <Button x:Name="btCheckPrice" HorizontalAlignment="Stretch" Height="40" Margin="5 20 5 100" TextBlock.FontSize="15" >CHECK PRICE</Button>
                         </StackPanel>
 
                         <StackPanel Grid.Column="1">
-                            <Button x:Name="btAmount" Width="160" Height="60" Margin="5" TextBlock.FontSize="15" >AMOUNT</Button>
-                            <Button x:Name="btRepeatProduct" Width="160" Height="40" Margin="5 20 5 100" TextBlock.FontSize="15" >REPEAT PRODUCT</Button>
+                            <Button x:Name="btAmount" HorizontalAlignment="Stretch" Height="60" Margin="5" TextBlock.FontSize="15" >AMOUNT</Button>
+                            <Button x:Name="btRepeatProduct" HorizontalAlignment="Stretch" Height="40" Margin="5 20 5 100" TextBlock.FontSize="15" >REPEAT PRODUCT</Button>
+                        </StackPanel>
+
+                    </Grid>-->
+
+
+                    
+                    <Grid DockPanel.Dock="Right">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+
+                        
+                        <!-- Product code text and texbox -->
+                        <StackPanel Grid.Column="0">
+                            <TextBlock FontSize="20" Text="Code"/>
+                            <TextBox FontSize="20" Margin="0 5 5 5"></TextBox>
+                        </StackPanel>
+
+                        <!-- Product name text and combobox-->
+                        <StackPanel Grid.Column="1">
+                            <TextBlock FontSize="20" Text="Product Name"/>
+                            <ComboBox Margin="0 5 0 5" FontSize="20" ></ComboBox>
                         </StackPanel>
 
                     </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBox Grid.Column="0" IsReadOnly="True" FontSize="20" Margin=" 0 5 5 5" TextAlignment="Justify" Text="Weight (kg):"/>
+
+                        <TextBox Grid.Column="1" FontSize="20" Margin=" 5 5 0 5" TextAlignment="Left" Text="13,5"/>
+                        
+                    </Grid>
+                    
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                    
+                        <StackPanel Grid.Column="0">
+                            <Button x:Name="btAdd" HorizontalAlignment="Stretch" Height="60" Margin="0 5 5 50" TextBlock.FontSize="25" TextBlock.FontWeight="Bold" >ADD</Button>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1">
+                                    <Button x:Name="btCheckPrice" HorizontalAlignment="Stretch" Height="60" Margin="5 5 0 50" TextBlock.FontSize="20" >CHECK PRICE</Button>
+                        </StackPanel>
+
+                    </Grid>
+
+
 
 
                     <Grid>
