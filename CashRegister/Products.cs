@@ -2,117 +2,106 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Text;
+using System.Data;
 
 namespace CashRegister
 {
-    class Products
+
+
+
+    public class Products
     {
 
-        //public class CustomArray<T>
-        //{
-        //    public T[] GetColumn(T[,] matrix, int columnNumber)
-        //    {
-        //        return Enumerable.Range(0, matrix.GetLength(0))
-        //                .Select(x => matrix[x, columnNumber])
-        //                .ToArray();
-        //    }
-
-        //    public T[] GetRow(T[,] matrix, int rowNumber)
-        //    {
-        //        return Enumerable.Range(0, matrix.GetLength(1))
-        //                .Select(x => matrix[rowNumber, x])
-        //                .ToArray();
-        //    }
-        //}
-
-        //public void ProductsArrayCreator()
-        //{
-        //    object[,] ProductsFullArray = new object[,]
-        //    {
-        //        {1, "Tomatos" },
-        //        {2, "Potatos" },
-        //    };
-
-        //    int index = 0;
-
-        //    int numberOfRows = ProductsFullArray.GetLength(0);
-        //    int numberOfColumns = ProductsFullArray.GetLength(1);
-
-        //    object[] ProductsNameArray = new object[numberOfRows * numberOfColumns];
-
-        //    for (int i = 0; i < numberOfColumns; i++)
-        //    {
-        //        for (int j = 0; j < numberOfRows; j++)
-        //        {
-        //            ProductsNameArray[index] = ProductsFullArray[j, i];
-        //            index++;
-        //        }
-        //    }
-
-
-        //    //object[] ProductsNameArray = CustomArray<object>.GetColumn(ProductsFullArray[], 2);
-
-
-        //    //object[][] ProductsArray = new object[1][];
-        //    //ProductsArray[0] = new object[] { 1, 2, 3, 4, 5 };
-        //    //ProductsArray[1] = new object[] { "Tomatos", "Potatos", "Cabbages", "Cucumbers", "Onions" };
-
-
-        //}
-         
-        class ByWeightProducts
+        //Products Table
+        public static DataTable GetTable()
         {
+            // Create a DataTable
+            DataTable table = new DataTable();
+            DataColumn dtColumn;
+            DataRow dtRow;
 
-            public void Vegetables()
-            {
+            // Create ProductID column
+            dtColumn = new DataColumn();
+            dtColumn.DataType = Type.GetType("System.Int32");
+            dtColumn.ColumnName = "ProductId";
+            dtColumn.AutoIncrement = true;
+            dtColumn.Caption = "Product ID";
+            dtColumn.ReadOnly = true;
+            dtColumn.Unique = true;
+            table.Columns.Add(dtColumn);
 
-                Tuple<string, string, double> Tomatoes(double weight)
-                {
-                    string code = "001";
-                    string name = "Tomatoes";
-                    double pricePerKg = 3.14;
-                    double fPrice = weight * pricePerKg;
-                    return Tuple.Create(code, name, fPrice);
-                }
+            // Create Name column
+            dtColumn = new DataColumn();
+            dtColumn.DataType = Type.GetType("System.String");
+            dtColumn.ColumnName = "Name";
+            dtColumn.Caption = "Product Name";
+            table.Columns.Add(dtColumn);
+
+            // Create byWeight column
+
+            dtColumn = new DataColumn();
+            dtColumn.DataType = Type.GetType("System.Boolean");
+            dtColumn.ColumnName = "byWeight";
+            dtColumn.Caption = "Is price by weight?";
+            table.Columns.Add(dtColumn);
+
+            // Create price column
+            dtColumn = new DataColumn();
+            dtColumn.DataType = Type.GetType("System.Double");
+            dtColumn.ColumnName = "Price";
+            dtColumn.Caption = "Product price";
+            table.Columns.Add(dtColumn);
+
+            // Add rows with products info
+            dtRow = table.NewRow();
+            dtRow["ProductId"] = 0;
+            dtRow["Name"] = "Tomatoes";
+            dtRow["byWeight"] = true;
+            dtRow["Price"] = 3.14;
+            table.Rows.Add(dtRow);
+
+            dtRow = table.NewRow();
+            dtRow["ProductId"] = 1;
+            dtRow["Name"] = "Potatoes";
+            dtRow["byWeight"] = true;
+            dtRow["Price"] = 1.20;
+            table.Rows.Add(dtRow);
+
+            dtRow = table.NewRow();
+            dtRow["ProductId"] = 2;
+            dtRow["Name"] = "Onions";
+            dtRow["byWeight"] = true;
+            dtRow["Price"] = 2.80;
+            table.Rows.Add(dtRow);
+
+            dtRow = table.NewRow();
+            dtRow["ProductId"] = 3;
+            dtRow["Name"] = "Cabbages";
+            dtRow["byWeight"] = true;
+            dtRow["Price"] = 3.99;
+            table.Rows.Add(dtRow);
+
+            dtRow = table.NewRow();
+            dtRow["ProductId"] = 4;
+            dtRow["Name"] = "Cucumbers";
+            dtRow["byWeight"] = true;
+            dtRow["Price"] = 5.20;
+            table.Rows.Add(dtRow);
+
+            return table;
+        }
 
 
-                Tuple<string, string, double> Potatoes(double weight)
-                {
-                    string code = "002";
-                    string name = "Tomatoes";
-                    double pricePerKg = 1.20;
-                    double fPrice = weight * pricePerKg;
-                    return Tuple.Create(code, name, fPrice);
-                }
+        
 
-                Tuple<string, string, double> Cabbages(double weight)
-                {
-                    string code = "003";
-                    string name = "Tomatoes";
-                    double pricePerKg = 3.99;
-                    double fPrice = weight * pricePerKg;
-                    return Tuple.Create(code, name, fPrice);
-                }
+         
+        public class ByWeightProducts
+        {
+           
 
-                //double Cabbages(double weight)
-                //{
-                //    double pricePerKg = 3.99;
-                //    return weight * pricePerKg;
-                //}
 
-                //double Cucumbers(double weight)
-                //{
-                //    double pricePerKg = 5.20;
-                //    return weight * pricePerKg;
-                //}
 
-                //double Onions(double weight)
-                //{
-                //    double pricePerKg = 2.67;
-                //    return weight * pricePerKg;
-                //}
-
-            }
+            
 
         }
     }

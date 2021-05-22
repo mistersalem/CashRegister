@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -21,69 +22,58 @@ namespace CashRegister
     public partial class MainWindow : Window
     {
 
+
+
         public MainWindow()
         {
 
             InitializeComponent();
-            ProductsArrayCreator();
-            
+
+            NameArrayCreator();
+
             vegeComboBox();
 
-            //nameComboBox.ItemsSource = _nameComboBoxSource;
-            //nameComboBox.SelectionChanged += nameComboBox_SelectionChanged;
+            
 
 
         }
 
-        readonly string[] vegetables = { "1", "2" };
-        private bool windowShowFirstTime = true;
+
 
         public void vegeComboBox()
         {
-            nameComboBox.ItemsSource = ProductsNameArray;
+            //nameComboBox.ItemsSource = ProductsNameArray;
+
+            nameComboBox.ItemsSource = productsTable.AsDataView();
         }
 
+        DataTable productsTable =  Products.GetTable();
         object[] ProductsNameArray;
 
-
-        
-        // This meth create 1d array of products names for combobox
-        public void ProductsArrayCreator()
+      
+        // Create 1d array of products names for combobox
+        public void NameArrayCreator()
         {
-            object[,] ProductsFullArray = new object[,]
-            {
-                {1, "Tomatoes" },
-                {2, "Potatoes" },
-                {3, "Onions" },
-            };
 
             int index = 0;
 
-            int numberOfRows = ProductsFullArray.GetLength(0);
-            int numberOfColumns = ProductsFullArray.GetLength(1);
+            int noRows = productsTable.Rows.Count;
 
+            ProductsNameArray = new object[noRows];
 
-            ProductsNameArray = new object[numberOfRows];
-
-
-                for (int j = 0; j < numberOfRows; j++)
-                {
-                    ProductsNameArray[index] = ProductsFullArray[j, 1];
-                    index++;
-                }
-            
+            foreach (DataRow row in productsTable.Rows)
+            {
+                ProductsNameArray[index] = productsTable.Rows[index]["Name"].ToString();
+                index++;
+            }
 
         }
 
         private void nameComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MessageBox.Show(nameComboBox.SelectedItem.ToString());
+            
         }
 
-        //private void btAdd_Click(object sender, RoutedEventArgs e)
-        //{
-        //    MessageBox.Show(this.nameComboBox.SelectedItem.ToString());
-        //}
 
 
 
